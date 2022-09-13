@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class LegendItem : Control { 
 
@@ -37,11 +38,25 @@ public class LegendItem : Control {
 	}
 
     private void MoveUp() {
-        // FIXME move in list too
-        GetParent().MoveChild(this, Math.Max(GetIndex() - 1, 0));
+        int newIdx = Math.Max(GetIndex() - 1, 0);
+        Move(_legend.columnMaps[keyMapping.column], GetIndex(), newIdx);
+        GetParent().MoveChild(this, newIdx);
     }
 
     private void MoveDown() {
+        int newIdx = Math.Max(GetIndex() - 1, 0);
+        Move(_legend.columnMaps[keyMapping.column], GetIndex(), newIdx);
         GetParent().MoveChild(this, Math.Min(GetIndex() + 1, GetParent().GetChildCount()));
+    }
+
+    public void Move<T>(List<T> list, int oldIndex, int newIndex) {
+        var item = list[oldIndex];
+
+        list.RemoveAt(oldIndex);
+
+        if (newIndex > oldIndex) newIndex--;
+        // the actual index could have shifted due to the removal
+
+        list.Insert(newIndex, item);
     }
 }
