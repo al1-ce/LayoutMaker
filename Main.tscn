@@ -856,43 +856,51 @@ margin_bottom = -8.0
 scroll_horizontal_enabled = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Legend/ScrollContainer"]
-margin_right = 1138.0
+margin_right = 1264.0
+size_flags_horizontal = 3
 custom_constants/separation = 3
 alignment = 1
 
 [node name="Column1" type="VBoxContainer" parent="Legend/ScrollContainer/HBoxContainer"]
-margin_right = 160.0
+margin_right = 178.0
 rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
 
 [node name="Column2" type="VBoxContainer" parent="Legend/ScrollContainer/HBoxContainer"]
-margin_left = 163.0
-margin_right = 323.0
+margin_left = 181.0
+margin_right = 359.0
 rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
 
 [node name="Column3" type="VBoxContainer" parent="Legend/ScrollContainer/HBoxContainer"]
-margin_left = 326.0
-margin_right = 486.0
+margin_left = 362.0
+margin_right = 540.0
 rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
 
 [node name="Column4" type="VBoxContainer" parent="Legend/ScrollContainer/HBoxContainer"]
-margin_left = 489.0
-margin_right = 649.0
+margin_left = 543.0
+margin_right = 721.0
 rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
 
 [node name="Column5" type="VBoxContainer" parent="Legend/ScrollContainer/HBoxContainer"]
-margin_left = 652.0
-margin_right = 812.0
+margin_left = 724.0
+margin_right = 902.0
 rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
 
 [node name="Column6" type="VBoxContainer" parent="Legend/ScrollContainer/HBoxContainer"]
-margin_left = 815.0
-margin_right = 975.0
+margin_left = 905.0
+margin_right = 1083.0
 rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
 
 [node name="Column7" type="VBoxContainer" parent="Legend/ScrollContainer/HBoxContainer"]
-margin_left = 978.0
-margin_right = 1138.0
+margin_left = 1086.0
+margin_right = 1264.0
 rect_min_size = Vector2( 160, 0 )
+size_flags_horizontal = 3
 
 [node name="PopupKeyMap" type="Popup" parent="." groups=["PopupMap"]]
 unique_name_in_owner = true

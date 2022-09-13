@@ -13,6 +13,7 @@ font_data = ExtResource( 1 )
 margin_right = 176.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 176, 40 )
+size_flags_horizontal = 3
 script = ExtResource( 2 )
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
