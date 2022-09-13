@@ -27,10 +27,12 @@ margin_right = 61.0
 margin_bottom = 32.0
 
 [node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 66.0
 margin_top = 8.0
-margin_right = 170.0
-margin_bottom = 32.0
+margin_right = -6.0
+margin_bottom = -8.0
 custom_fonts/font = SubResource( 1 )
 text = "None"
 valign = 1
