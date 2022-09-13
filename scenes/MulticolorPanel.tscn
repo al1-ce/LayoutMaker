@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/MulticolorPanel.cs" type="Script" id=1]
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform sampler2D tex;
+uniform float rot: hint_range(0.0, 360.0, 0.1) = 0.0;
+
+vec2 rotateUV(vec2 uv, float rotation) {
+    float mid = 0.5;
+    return vec2(
+        cos(rotation) * (uv.x - mid) + sin(rotation) * (uv.y - mid) + mid,
+        cos(rotation) * (uv.y - mid) - sin(rotation) * (uv.x - mid) + mid
+    );
+}
+
+void fragment() { 
+	COLOR = texture(tex, rotateUV(UV, radians(rot))) * vec4(1., 1., 1., 0.3);
+}"
+
+[sub_resource type="Gradient" id=11]
+interpolation_mode = 1
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=12]
+resource_local_to_scene = true
+gradient = SubResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=10]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/rot = 35.0
+shader_param/tex = SubResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MulticolorPanel" type="Panel"]
+material = SubResource( 10 )
+margin_right = 20.0
+margin_bottom = 20.0
+custom_styles/panel = SubResource( 6 )
+script = ExtResource( 1 )
